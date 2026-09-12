@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            margin: auto;
+            border:2px solid black;
+            width:800px;
+            height:500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .child{
+            border:2px solid blue;
+            width:200px;
+            height:200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="child"><img src="https://picsum.photos/id/237/200/200" alt=""></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+    <div style="text-align: center;">
+        <button onclick="move()">MOVE</button>
+        <button onclick="back()">BACK</button>
+    </div>
+    <script>
+        var current = 0;
+        var boxes = document.querySelectorAll(".child");
+        function move(){
+            if (current<boxes.length-1){
+                boxes[current +1].innerHTML = boxes[current].innerHTML;
+                boxes[current].innerHTML="";
+                current++;
+            } else{
+                boxes[0].innerHTML = boxes[current].innerHTML;
+                boxes[current].innerHTML="";
+                current = 0;
+            }
+                }
+
+                 function back(){
+            if (current>0){
+                boxes[current -1].innerHTML = boxes[current].innerHTML;
+                boxes[current].innerHTML="";
+                current--;
+            } else{
+                boxes[boxes.length-1].innerHTML = boxes[current].innerHTML;
+                boxes[current].innerHTML="";
+                current = boxes.length-1;
+            }
+                }
+    </script>
+</body>
+</html>
+                
+    </script>
+</body>
+</html>

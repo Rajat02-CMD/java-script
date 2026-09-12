@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {
+            border: 2px solid black;
+            margin: auto;
+            width: 600px;
+            height: 400px;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            text-align: center;
+        }
+        .child{
+            
+            border: 2px solid red;
+            width: 100px;
+            height:300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">hello</div>
+        <button onclick="move1()">></button>
+        <button onclick="move01()"><</button>
+        <div class="child"></div>
+        <button onclick="move2()">></button>
+         <button onclick="move02()"><</button>
+        <div class="child"></div>
+    </div>
+    <script>
+        var boxes = document.querySelectorAll(".child");
+        function move1(){
+            boxes[1].innerText = boxes [0].innerText
+            boxes[0].innerText = "";
+        }
+         function move01(){
+            boxes[0].innerText = boxes [1].innerText
+            boxes[1].innerText = "";
+        }
+         function move2(){
+            boxes[2].innerText = boxes [1].innerText
+            boxes[1].innerText = "";
+        }
+         function move02(){
+            boxes[1].innerText = boxes [2].innerText
+            boxes[2].innerText = "";
+        }
+    </script>
+</body>
+</html>
